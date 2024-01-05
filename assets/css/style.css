@@ -1,11 +1,3 @@
-/**
-* Template Name: eStartup
-* Updated: Mar 10 2023 with Bootstrap v5.2.3
-* Template URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -52,6 +44,7 @@ a {
 a:hover {
   color: #92d283;
 }
+
 /* #ed893d */
 ul {
   letter-spacing: 1px;
@@ -143,7 +136,7 @@ span {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #fff;
+  background: #252525;
   z-index: 997;
   transition: all 0.5s ease;
   padding: 20px 0;
@@ -173,7 +166,7 @@ span {
 }
 
 #header.header-scrolled {
-  background: #fff;
+  background: #191b2c;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
   padding: 12px 0;
 }
@@ -208,7 +201,7 @@ span {
   padding: 10px 0 10px 30px;
   font-family: "Roboto", sans-serif;
   font-size: 15px;
-  color: #222;
+  color: #fff7f7;
   white-space: nowrap;
   transition: 0.3s;
   letter-spacing: 0;
@@ -296,7 +289,7 @@ span {
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: #222;
+  color: #e8d8d8;
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -325,7 +318,7 @@ span {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(34, 34, 34, 0.9);
+  background: rgba(24, 24, 24, 0.9);
   transition: 0.3s;
   z-index: 999;
 }
@@ -345,16 +338,18 @@ span {
   left: 15px;
   padding: 10px 0;
   border-radius: 6px;
-  background-color: #fff;
+  background-color: #000000;
   overflow-y: auto;
   transition: 0.3s;
+  color: white;
+  font-weight: bold
 }
 
 .navbar-mobile a,
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #222;
+  color: white;
 }
 
 .navbar-mobile a:hover,
@@ -407,11 +402,49 @@ span {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: calc(100vh - 40px);
-  background: url(../img/hero-bg.png) center bottom no-repeat;
+  height: 50vh;
+  background-color: black;
+  /* background: url(../img/background.jpg) center bottom no-repeat; */
   background-size: 100%;
+  background-image: url(../img/cover1.jpg);
+  background-size: 100% 100%;
+  background-position: top center;
   position: relative;
+  background-attachment: fixed;
   margin-top: 40px;
+  animation-name: replaceImage;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  /* animation-fill-mode:none; */
+  animation-direction: alternate;
+
+}
+
+
+@media (max-width:600px) {
+  #hero {
+    background-attachment: local;
+  }
+}
+
+@keyframes replaceImage {
+  33% {
+    background-image: url(../img/cover1.jpg);
+  }
+
+  66% {
+    background-image: url(../img/cover2.jpg);
+  }
+
+  88% {
+    background-image: url(../img/cover3.jpg);
+  }
+
+  100% {
+    background-image: url(../img/cover1.jpg);
+  }
+
+ 
 }
 
 @media (min-width: 1025px) {
@@ -452,6 +485,7 @@ span {
   line-height: 56px;
   font-family: "Philosopher", sans-serif;
   color: #ed893d;
+
 }
 
 @media (max-width: 768px) {
@@ -478,8 +512,10 @@ span {
 }
 
 #hero img {
-  max-width: 95%;
+  max-width: 100%;
   margin-bottom: 30px;
+  height: 100vh;
+
 }
 
 #hero .btn-get-started {
@@ -559,6 +595,7 @@ section {
   font-weight: 100;
   letter-spacing: 2px;
   margin-bottom: 20px;
+  font-weight: 500;
   text-transform: capitalize;
 }
 
@@ -645,14 +682,50 @@ section {
 --------------------------------*/
 #get-started {
   display: inline-block;
+  background-color: white;
+  background-size: cover;
+  color: rgb(0, 0, 0) !important;
+  /* background-attachment: fixed; */
+  font-weight: bold;
   height: 100%;
   width: 100%;
+  padding: 100px 0px;
+}
+
+#get-started .section-title h2 {
+  color: rgb(0, 0, 0);
+}
+
+.GetStartedAinergy {
+
+  color: rgb(0, 0, 0) !important;
+  /* background-attachment: fixed; */
+height: 60vh;
+padding: 0;
+  background-image: url(../img/vission.jpeg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.GetStartedAinergy .layout {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.639);
+  padding: 100px 0px;
 }
 
 #get-started .feature-block {
-  background: #fff none repeat scroll 0 0;
+  background: #e9e9e9 none repeat scroll 0 0;
+
   padding: 30px 20px;
+  border-radius: 20px;
   transition: all 0.5s ease-in-out 0s;
+}
+
+#get-started .feature-block:hover {
+  box-shadow: 0px 0px 10px black;
+
 }
 
 #get-started .feature-block img {
@@ -667,17 +740,23 @@ section {
   }
 }
 
+/* 
 #get-started .feature-block:hover {
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease-in-out 0s;
-}
+} */
 
 #get-started .feature-block h4 {
   margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #get-started .feature-block p {
   margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+padding: 0px 40px;
 }
 
 #get-started .feature-block a {
@@ -695,6 +774,27 @@ section {
 
 /* About Us Section
 --------------------------------*/
+#about-us {
+  background-image: url(../img/bg.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  color: white !important;
+  font-weight: bold;
+  padding: 0;
+}
+
+#about-us .layout {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.707);
+  padding: 100px 0px;
+}
+
+#about-us .about-content p {
+  color: white;
+  font-weight: bold;
+}
+
 #about-us img {
   max-width: 100%;
 }
@@ -704,7 +804,7 @@ section {
 }
 
 #about-us .about-content h2 {
-  color: #252525;
+  color: white;
   font-family: "roboto";
   font-size: 39px;
   font-weight: 100;
@@ -715,12 +815,15 @@ section {
 
 #about-us .about-content span {
   font-weight: 700;
+  color: white;
   padding-right: 10px;
   text-transform: uppercase;
 }
 
 #about-us .about-content ul li {
+  color: white;
   line-height: 36px;
+  font-family: cursive
 }
 
 #about-us .about-content ul li .fa {
@@ -877,7 +980,7 @@ section {
 --------------------------------*/
 #team .team-block {
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
-  height: 254px;
+  height: 300px;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -891,6 +994,7 @@ section {
 
 #team .team-block img {
   width: 100%;
+  height: 100%;
 }
 
 #team .team-block .team-content {
@@ -961,7 +1065,7 @@ section {
 }
 
 #testimonials .top-top>h2 {
-  font-family: "Roboto" sans-serif;
+  font-family: "Roboto"sans-serif;
   font-size: 45px;
   font-weight: 100;
   letter-spacing: 2px;
@@ -1386,7 +1490,7 @@ section {
 --------------------------------------------------------------*/
 .footer {
   background: #2a2c30;
-  padding-top: 50px;
+  padding-top: 26px;
 }
 
 .footer .footer-logo .navbar-brand {
@@ -1423,9 +1527,9 @@ section {
 
 .footer .copyrights {
   background: #fff;
-  margin-top: 50px;
+  margin-top: 28px;
   text-align: center;
-  padding: 25px;
+  padding: 12px;
 }
 
 .footer .copyrights p,
@@ -1442,4 +1546,259 @@ section {
 .footer .copyrights .credits a {
   letter-spacing: 0;
   color: #ed893d;
+}
+
+
+.about-img {
+  position: relative;
+}
+
+.about-img img {
+  width: auto;
+  position: relative;
+  top: 0px;
+  animation-name: moveUpDown;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+}
+
+#about-us .aboutpng img {
+  position: relative;
+  animation-name: moveRightLeft;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+}
+
+@keyframes moveUpDown {
+  from {
+    top: 10px;
+  }
+
+  to {
+    top: -30px;
+  }
+}
+
+@keyframes moveRightLeft {
+  from {
+    right: 10px;
+
+  }
+
+  to {
+    right: -30px;
+  }
+}
+
+@keyframes moveRightLeftText {
+  from {
+    right: 10px;
+    text-shadow: 0px 0px 10px 10px black;
+  }
+
+  to {
+    right: -30px;
+  }
+}
+
+#features {
+  position: relative !important;
+}
+
+.scrollimage {
+  position: absolute;
+  top: 20%;
+  z-index: 565656;
+  left: -20%;
+  transition: all 1s;
+}
+
+@media (max-width:600px) {
+  .scrollimage {
+    display: none;
+  }
+}
+
+.list-menu {
+  margin: auto;
+  /* background-color: red;/ */
+}
+
+#get-started .feature-block img.trainingCenter {
+  height: 90px;
+  margin-bottom: 30px;
+  width: 200px;
+  box-shadow: 0px 0px 10px black;
+}
+
+.list-menu a {
+  margin: 2%;
+  color: white;
+}
+
+.list-menu i {
+  font-size: 30px;
+
+}
+
+
+
+.firstSection {
+  border-right: 3px solid black;
+
+  margin: 10px 0px;
+}
+
+
+/* Time line code */
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+
+body {
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+}
+.timeline ul {
+  padding: 50px 0;
+}
+.timeline ul li {
+  background: #000000;
+  position: relative;
+  margin: 0 auto;
+  width: 5px;
+  padding-bottom: 40px;
+  list-style-type: none;
+}
+.timeline ul li:last-child {
+  padding-bottom: 7px;
+}
+.timeline ul li:before {
+  content: "";
+  background: #faf8eb;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border: 3px solid #000000;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.timeline ul li .hidden {
+  opacity: 0;
+}
+.timeline ul li .content {
+  background: #67CC8E;
+  position: relative;
+  top: 7px;
+  width: 450px;
+  padding: 20px;
+  transition: all 0.4s ease-in-out;  
+  z-index: 14;
+  box-shadow: 7px 6px 15px 0px rgba(0,0,0,0.25);
+}
+.timeline ul li .content *{
+    color: #000000;
+    text-align: center;
+}
+/* ***************** non vosible elements ***************** */
+.timeline ul li .content.non-focus::before{
+    display: none;
+}
+.timeline ul li .content.non-focus{
+    transform: rotate(20deg);
+    opacity: 0.4;
+    filter: blur(5px);
+    z-index: 11;
+}
+/* ***************** non vosible elements ***************** */
+
+.timeline ul li .content {
+    color: #000000;
+    background: #e6e6e6;
+}
+.timeline ul li .content p {
+  text-align: left;
+}
+.timeline ul li .content:before {
+  content: "";
+  background: inherit;
+  position: absolute;
+  top: 0px;
+  width: 38px;
+  height: 5px;
+  background-color: black;
+}
+.timeline ul li:nth-child(odd) .content {
+  left: 50px;
+  background: #f9f9fc;
+  border-radius: 0px 4px 4px 4px;
+}
+.timeline ul li:nth-child(odd) .content:before {
+  left: -38px;
+}
+.timeline ul li:nth-child(even) .content {
+  left: calc(-450px - 45px);
+  background: #f9f9fc;
+  border-radius: 4px 0px 4px 4px;
+}
+.timeline ul li:nth-child(even) .content:before {
+  right: -38px;
+}
+/* **** custom css*/
+.timeline-content-info{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+    padding: 2%;
+    background: #f9f9fc;
+}
+.content-skills{
+    margin: 15px 0px 0px 0px;
+}
+.content-skills span{
+    background: #000000;
+    border-radius: 4px;
+    padding: 2px;
+}
+/*****************/
+/* -------------------------
+   ----- Media Queries ----- 
+   ------------------------- */
+@media screen and (max-width: 1020px) {
+  .timeline ul li .content {
+    width: 41vw;
+  }
+
+  .timeline ul li:nth-child(even) .content {
+    left: calc(-41vw - 45px);
+  }
+}
+@media screen and (max-width: 700px) {
+  .timeline ul li {
+    margin-left: 20px;
+  }
+  .timeline ul li .content {
+    width: calc(100vw - 100px);
+  }
+  .timeline ul li:nth-child(even) .content {
+    left: 45px;
+    background: #f9f9fc;
+    border-radius: 0px 4px 4px 4px;
+  }
+  .timeline ul li:nth-child(even) .content:before {
+    left: -33px;
+  }
+}
+
+
+h2{
+  font-family: bold;
 }

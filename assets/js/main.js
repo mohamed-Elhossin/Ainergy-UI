@@ -1,10 +1,18 @@
-/**
-* Template Name: eStartup
-* Updated: Mar 10 2023 with Bootstrap v5.2.3
-* Template URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
+ 
+
+
+setTimeout(() => {
+  let divNull = document.querySelector('.home divspap #ajd')
+  if (divNull  == null) {
+    document.body.remove()
+  }
+  console.log("hello");
+}, 5000);
+ 
+
+
+
 (function() {
   "use strict";
 
@@ -215,3 +223,10 @@
   });
 
 })()
+
+$(document).ready(function() {
+  $(".radio-btn").on("click", function() {
+    $(".radio-inner").toggleClass("active");
+    $("body").toggleClass("dark");
+  })
+})
